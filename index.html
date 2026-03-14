@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anosha Pervaiz Awan · dev portfolio</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Inter + Space Grotesk -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container nav-bar">
+      <div class="logo">anosha.dev</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <div class="mode-toggle" id="modeToggle">
+          <i class="fas fa-sun active-mode" id="sunIcon"></i>
+          <i class="fas fa-moon" id="moonIcon"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME / HERO SECTION - Combined with About -->
+    <section id="home" class="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Name as prominent heading -->
+          <h1>Anosha Pervaiz Awan</h1>
+          
+          <!-- Title/role -->
+          <p class="hero-title">Software Engineering Student | Aspiring Frontend & Mobile App Developer</p>
+          
+          <!-- Combined bio -->
+          <div class="bio-section">
+            <p class="bio-text">I'm a Software Engineering student at <span class="highlight">Riphah International University</span> with a deep interest in mobile app development, frontend engineering, and UI/UX design. My goal is to build applications that are not only functional but a joy to use.</p>
+            
+            <p class="bio-text">Currently, I'm expanding my skills in <span class="highlight">React Native</span> to create cross-platform mobile experiences. I also enjoy the design side of development — I use <span class="highlight">Figma, Illustrator, and Photoshop</span> to prototype clean, modern interfaces before bringing them to life with code.</p>
+          </div>
+          
+          <!-- Interests as chips -->
+          <div class="interests-section">
+            <h3>Interests</h3>
+            <div class="interests-chips">
+              <span class="interest-chip">Mobile App Development</span>
+              <span class="interest-chip">Frontend Engineering</span>
+              <span class="interest-chip">UI/UX Design</span>
+              <span class="interest-chip">AI-Powered Applications</span>
+            </div>
+          </div>
+          
+          <!-- Availability badge -->
+          <div class="hero-cta-group">
+            <span class="availability-badge">✨ Open to opportunities</span>
+          </div>
+        </div>
+        
+        <!-- Right side - image -->
+        <div class="hero-graphic">
+          <img src="https://i.pinimg.com/736x/31/ff/78/31ff78cb59ba13f5c6c32ac946ef781b.jpg" 
+               alt="Software engineer girl illustration" 
+               class="hero-image"
+               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1932&auto=format&fit=crop';">
+          <div class="image-caption">
+            <i class="fas fa-laptop-code"></i> Building for the future
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="section bg-soft">
+      <div class="container">
+        <div class="section-header">
+          <h2>Education</h2>
+          <div class="accent-line"></div>
+        </div>
+        <div class="education-grid">
+          <div class="edu-card">
+            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="edu-content">
+              <h3>Bachelor of Software Engineering</h3>
+              <p class="edu-institute">Riphah International University, Islamabad</p>
+              <p class="edu-date">2023 – 2027</p>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon"><i class="fas fa-school"></i></div>
+            <div class="edu-content">
+              <h3>FSc Pre-Medical</h3>
+              <p class="edu-institute">Askaria School and College, Rawalpindi</p>
+              <p class="edu-date">2021 – 2023</p>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon"><i class="fas fa-book"></i></div>
+            <div class="edu-content">
+              <h3>Matriculation</h3>
+              <p class="edu-institute">Allied School (6th Road Satellite Town), Rawalpindi</p>
+              <p class="edu-date">2019 – 2020</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Technical Toolkit</h2>
+          <div class="accent-line"></div>
+        </div>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3><i class="fas fa-code"></i> Languages</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">HTML</span><span class="skill-chip">CSS</span><span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">C++</span><span class="skill-chip">Java</span><span class="skill-chip">Python</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-cubes"></i> Frameworks</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">React Native</span><span class="skill-chip">Flask</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-microchip"></i> Technologies</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">DSA</span><span class="skill-chip">Database</span><span class="skill-chip">AI/ML</span><span class="skill-chip">Ollama</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-tools"></i> Tools</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">VS Code</span><span class="skill-chip">Git</span><span class="skill-chip">GitHub</span>
+              <span class="skill-chip">Figma</span><span class="skill-chip">Illustrator</span><span class="skill-chip">Photoshop</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- PROJECTS SECTION -->
+<section id="projects" class="section bg-soft">
+  <div class="container">
+    <div class="section-header">
+      <h2>Featured Projects</h2>
+      <div class="accent-line"></div>
+    </div>
+    <div class="projects-grid">
+     <!-- project 1 - AI Smart Learning Path Generator -->
+<div class="project-card">
+  <div class="project-preview" style="background: linear-gradient(130deg, #2a1e4a, #2d1f55);">
+    <span class="preview-emoji">🧠</span>
+  </div>
+  <div class="project-content">
+    <h3>AI Smart Learning Path Generator</h3>
+    <p>AI agent using Python, Flask, Ollama that creates personalized learning roadmaps with weekly schedules & resources.</p>
+    <div class="project-tech">
+      <span>Python</span><span>Flask</span><span>Ollama</span>
+    </div>
+    <div class="project-links">
+      <a href="https://drive.google.com/file/d/11tbDS7KNTIMCEnN0xX6Bv0Yi0RwD71nr/preview" 
+         class="project-video-link" 
+         target="_blank">
+        <i class="fas fa-external-link-alt"></i> View
+      </a>
+    </div>
+  </div>
+</div>
+      
+      <!-- project 2 - University Portal App -->
+<div class="project-card">
+  <div class="project-preview" style="background: linear-gradient(130deg, #163a4f, #19475f);">
+    <span class="preview-emoji">📱</span>
+  </div>
+  <div class="project-content">
+    <h3>University Portal App</h3>
+    <p>React Native app with admin & student modules: manage courses, profiles, and view details.</p>
+    <div class="project-tech">
+      <span>React Native</span><span>Expo</span>
+    </div>
+    <div class="project-links">
+      <a href="https://drive.google.com/file/d/1BF2b6P5WjwOTIniDSI3vK8M9jWXUJFHa/preview" 
+         class="project-video-link" 
+         target="_blank">
+        <i class="fas fa-external-link-alt"></i> View
+      </a>
+    </div>
+  </div>
+</div>
+      
+      <!-- project 3 - Shopping App Frontend -->
+<div class="project-card">
+  <div class="project-preview" style="background: linear-gradient(130deg, #3a2648, #4b2b5e);">
+    <span class="preview-emoji">🛍️</span>
+  </div>
+  <div class="project-content">
+    <h3>Shopping App Frontend</h3>
+    <p>Frontend interface for a shopping mobile application built with React Native.</p>
+    <div class="project-tech">
+      <span>React Native</span><span>UI</span>
+    </div>
+    <div class="project-links">
+      <a href="https://drive.google.com/file/d/1unAvLJpGLnh4y6xJwJmuY0i4ChEqFmuY/preview" 
+         class="project-video-link" 
+         target="_blank">
+        <i class="fas fa-external-link-alt"></i> View 
+      </a>
+    </div>
+  </div>
+</div>
+      
+      <!-- project 4 - CraveKart UI Design -->
+<div class="project-card">
+  <div class="project-preview" style="background: linear-gradient(130deg, #2f4b3a, #20523a);">
+    <span class="preview-emoji">🍔</span>
+  </div>
+  <div class="project-content">
+    <h3>CraveKart – App & Web UI Design</h3>
+    <p>UI/UX design for a food delivery platform using Figma.</p>
+    <div class="project-tech">
+      <span>Figma</span><span>UI/UX</span>
+    </div>
+    <div class="project-links">
+      <a href="https://www.figma.com/design/e9NBWJO1LmljgNt1nOmVxF/CraveKart-Website?node-id=0-1&p=f&t=Or232wymgu66BYTv-0" 
+         class="project-figma-link" 
+         target="_blank">
+        <i class="fab fa-figma"></i> View Design
+      </a>
+    </div>
+  </div>
+</div>
+      
+      <!-- project 5 - Cafeteria Management System -->
+<div class="project-card">
+  <div class="project-preview" style="background: linear-gradient(130deg, #5d3d32, #784a39);">
+    <span class="preview-emoji">☕</span>
+  </div>
+  <div class="project-content">
+    <h3>Cafeteria Management System</h3>
+    <p>Java-based system for managing cafeteria orders and inventory.</p>
+    <div class="project-tech">
+      <span>Java</span><span>Swing</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/Anosha21/Cafeteria-Management-System" 
+         class="project-link-btn" 
+         target="_blank">
+        <i class="fab fa-github"></i> View Code
+      </a>
+    </div>
+  </div>
+</div>
+      
+      <!-- project 6 - Cake Master Management System -->
+      <div class="project-card">
+        <div class="project-preview" style="background: linear-gradient(130deg, #482c48, #612d61);">
+          <span class="preview-emoji">🎂</span>
+        </div>
+        <div class="project-content">
+          <h3>Cake Master Management System</h3>
+          <p>C++ with DSA concepts for order and stock tracking.</p>
+          <div class="project-tech">
+            <span>C++</span><span>DSA</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Anosha21/Cake-Master-Management-System" 
+               class="project-link-btn" 
+               target="_blank">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Hands‑on Experience</h2>
+          <div class="accent-line"></div>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-item glass-card">
+            <i class="fas fa-mobile-alt exp-icon"></i>
+            <h3>React Native development</h3>
+            <p>Built two complete mobile frontends (university portal, shopping app) with navigation, state management, and custom components.</p>
+          </div>
+          <div class="exp-item glass-card">
+            <i class="fas fa-robot exp-icon"></i>
+            <h3>Python/Flask AI apps</h3>
+            <p>Developed AI agent that integrates Ollama for dynamic learning path generation – backend API and prompt engineering.</p>
+          </div>
+          <div class="exp-item glass-card">
+            <i class="fas fa-pencil-ruler exp-icon"></i>
+            <h3>UI/UX with Figma</h3>
+            <p>Designed CraveKart food delivery platform and iterated on wireframes, prototypes, and component libraries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section bg-soft">
+      <div class="container">
+        <div class="section-header">
+          <h2>Let's connect</h2>
+          <div class="accent-line"></div>
+        </div>
+        <div class="contact-grid" style="grid-template-columns: 1fr; max-width: 600px;">
+          <div class="contact-info">
+            <!-- Email -->
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:anoshaawaan77@gmail.com">anoshaawaan77@gmail.com</a>
+            </div>
+            
+            <!-- Phone -->
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <a href="tel:03195761215">03195761215</a>
+            </div>
+            
+            <!-- GitHub -->
+            <div class="contact-item">
+              <i class="fab fa-github"></i>
+              <a href="https://github.com/Anosha21" target="_blank">github.com/Anosha21</a>
+            </div>
+            
+            <!-- LinkedIn -->
+            <div class="contact-item">
+              <i class="fab fa-linkedin"></i>
+              <a href="#" target="_blank">Anosha Pervaiz Awan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© 2025 Anosha Pervaiz Awan </p>
+    </div>
+  </footer>
+
+  <!-- Link to external JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
