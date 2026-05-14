@@ -1,7 +1,8 @@
 /* ═══════════════════════════════════════════════════════════
    script.js — Anosha Pervaiz Awan | Software Engineer Portfolio
    Enhanced with: Theme Toggle, Mobile Menu, Scroll Reveal, 
-   Active Nav Links, Smooth Scroll, Dynamic Elements
+   Active Nav Links, Smooth Scroll, Dynamic Elements,
+   Certificate Modal & Interactions
    ═══════════════════════════════════════════════════════════ */
 
 (function() {
@@ -23,6 +24,11 @@
   const revealElements = document.querySelectorAll('.reveal');
   const allLinks = document.querySelectorAll('a[href^="#"]');
   const contactForm = document.getElementById('contactForm');
+
+  // Certificate Modal Elements
+  const certModal = document.getElementById('certModal');
+  const modalCertImage = document.getElementById('modalCertImage');
+  const closeModalBtn = document.querySelector('.close-modal');
 
   // ═══════════════════════════════════════════════════════════
   // 2. THEME / DARK MODE (Enhanced)
@@ -224,7 +230,82 @@
   }
 
   // ═══════════════════════════════════════════════════════════
-  // 8. FLOATING ANIMATION RESET (Performance)
+  // 8. CERTIFICATE MODAL FUNCTIONALITY
+  // ═══════════════════════════════════════════════════════════
+  
+  // Function to show certificate modal with image
+  window.showCertModal = function(buttonElement) {
+    if (!certModal || !modalCertImage) return;
+    
+    // Find the parent cert-card
+    const certCard = buttonElement.closest('.cert-card');
+    if (!certCard) return;
+    
+    // Get the image URL from data attribute
+    let imgUrl = certCard.getAttribute('data-cert-img');
+    
+    // Fallback images based on certificate type if no data attribute
+    if (!imgUrl) {
+      const certTitle = certCard.querySelector('h3')?.innerText || '';
+      if (certTitle.includes('Mobile App Development')) {
+        imgUrl = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23fef5ea'/%3E%3Ctext x='50%25' y='45%25' font-size='28' font-family='Georgia' text-anchor='middle' fill='%23b45f2b'%3ECERTIFICATE OF ACHIEVEMENT%3C/text%3E%3Ctext x='50%25' y='55%25' font-size='20' font-family='sans-serif' text-anchor='middle' fill='%234a3b2c'%3EAnosha Pervaiz Awan%3C/text%3E%3Ctext x='50%25' y='68%25' font-size='14' text-anchor='middle' fill='%23665442'%3EMobile App Development · DevelopersHub Corporation%3C/text%3E%3Ctext x='50%25' y='78%25' font-size='12' text-anchor='middle' fill='%23876b56'%3EMarch 10, 2026 – April 25, 2026%3C/text%3E%3C/svg%3E";
+      } else if (certTitle.includes('AI Fundamentals')) {
+        imgUrl = "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&auto=format";
+      } else {
+        imgUrl = "https://cdn.dribbble.com/users/1512216/screenshots/6651159/media/78f29e1668a65affefe3473061cb7c91.png?resize=400x300&vertical=center";
+      }
+    }
+    
+    modalCertImage.src = imgUrl;
+    certModal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  };
+  
+  // Function to close certificate modal
+  window.closeCertModal = function() {
+    if (certModal) {
+      certModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  };
+  
+  // Close modal when clicking on the close button
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', closeCertModal);
+  }
+  
+  // Close modal when clicking outside the modal content
+  if (certModal) {
+    certModal.addEventListener('click', function(e) {
+      if (e.target === certModal) {
+        closeCertModal();
+      }
+    });
+  }
+  
+  // Close modal on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && certModal && certModal.classList.contains('active')) {
+      closeCertModal();
+    }
+  });
+  
+  // Initialize all certificate view buttons
+  function initCertificateButtons() {
+    const certButtons = document.querySelectorAll('.btn-view-cert');
+    certButtons.forEach(button => {
+      // Remove any existing listeners by cloning and replacing
+      const newButton = button.cloneNode(true);
+      button.parentNode.replaceChild(newButton, button);
+      newButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.showCertModal(this);
+      });
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // 9. FLOATING ANIMATION RESET (Performance)
   // ═══════════════════════════════════════════════════════════
   let ticking = false;
   
@@ -241,7 +322,7 @@
   }
 
   // ═══════════════════════════════════════════════════════════
-  // 9. CONTACT FORM HANDLING (if exists)
+  // 10. CONTACT FORM HANDLING (if exists)
   // ═══════════════════════════════════════════════════════════
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -285,7 +366,7 @@
   }
 
   // ═══════════════════════════════════════════════════════════
-  // 10. RESIZE HANDLER (For responsive adjustments)
+  // 11. RESIZE HANDLER (For responsive adjustments)
   // ═══════════════════════════════════════════════════════════
   let resizeTimer;
   
@@ -298,11 +379,13 @@
       if (window.innerWidth > 900 && mobileNav && mobileNav.classList.contains('open')) {
         closeMobileMenu();
       }
+      // Re-initialize certificate buttons after potential DOM changes
+      initCertificateButtons();
     }, 150);
   }
 
   // ═══════════════════════════════════════════════════════════
-  // 11. INITIAL LOAD
+  // 12. INITIAL LOAD
   // ═══════════════════════════════════════════════════════════
   function init() {
     // Initialize theme
@@ -315,6 +398,9 @@
     checkRevealElements();
     updateActiveNavLink();
     
+    // Initialize certificate modal buttons
+    initCertificateButtons();
+    
     // Set up event listeners
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
@@ -324,6 +410,12 @@
       updateHeaderStyleForTheme();
     });
     observer.observe(htmlElement, { attributes: true, attributeFilter: ['data-theme'] });
+    
+    // Re-run certificate button init when DOM changes (for dynamic content)
+    const domObserver = new MutationObserver(() => {
+      initCertificateButtons();
+    });
+    domObserver.observe(document.body, { childList: true, subtree: true });
     
     // Optional: Add animation to hero elements after load
     setTimeout(() => {
@@ -344,7 +436,7 @@
 })();
 
 // ═══════════════════════════════════════════════════════════
-// 12. ADDITIONAL UTILITIES (Global helpers - optional)
+// 13. ADDITIONAL UTILITIES (Global helpers - optional)
 // ═══════════════════════════════════════════════════════════
 
 // Smooth scroll helper (exposed globally if needed)
@@ -370,6 +462,22 @@ styleSheet.textContent = `
       opacity: 1;
       transform: translateX(-50%) translateY(0);
     }
+  }
+  
+  /* Additional animation for certificate cards */
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .cert-card {
+    animation: fadeInScale 0.5s ease-out forwards;
   }
 `;
 document.head.appendChild(styleSheet);
