@@ -863,6 +863,7 @@ header {
 .p-green  { background: linear-gradient(135deg, #0f3020 0%, #0f4030 100%); }
 .p-brown  { background: linear-gradient(135deg, #3a1f14 0%, #4a2a1a 100%); }
 .p-pink   { background: linear-gradient(135deg, #3d0f2d 0%, #5a1a3d 100%); }
+.p-closet { background: linear-gradient(135deg, #1a0f2e 0%, #2d1545 50%, #3d0f2d 100%); }
 
 .project-preview::before {
   content: '';
@@ -1335,3 +1336,32 @@ footer {
 .intern-badge i { color: #f59e0b; font-size: 0.65rem; }
 
 [data-theme="dark"] .intern-badge { color: #fcd34d; }
+
+
+
+/* Certificate button */
+.cert-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #b45309;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+
+.cert-btn i { font-size: 0.78rem; }
+
+.cert-btn:hover {
+  background: rgba(251, 191, 36, 0.2);
+  border-color: #f59e0b;
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .cert-btn { color: #fcd34d; }
